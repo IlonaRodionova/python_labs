@@ -1,1 +1,2 @@
-print('sdssadfd')
+def printsmth(text):
+    print(text + 'idfc')
