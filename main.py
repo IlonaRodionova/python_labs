@@ -1,2 +1,4 @@
 def printsmth(text):
-    print(text + 'idfc')
+    print('hello world')
+printsmth()
+
