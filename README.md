@@ -1,9 +1,9 @@
 # Лабораторная 1
 ## Задание 1
 
-`name = input('Имя: ')`
-`age = int(input('Возраст: '))`
-`print(f'Привет, {name}! Через год тебе будет {age + 1}')`
+```name = input('Имя: ')
+age = int(input('Возраст: '))
+print(f'Привет, {name}! Через год тебе будет {age + 1}')```
 
 <img width="1034" height="1061" alt="01_greeting" src="https://github.com/user-attachments/assets/b3ff1fe7-c448-41a4-a4ce-a46f6490e585" />
 ## Задание 2
