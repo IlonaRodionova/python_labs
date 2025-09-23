@@ -1,1 +1,11 @@
-# labs
+<h1>Лабораторная 1<h1>
+<h2>Задание 1<h2>
+<img width="1034" height="1061" alt="01_greeting" src="https://github.com/user-attachments/assets/b3ff1fe7-c448-41a4-a4ce-a46f6490e585" />
+<h2>Задание 2<h2>
+<img width="973" height="677" alt="02_sum_avg" src="https://github.com/user-attachments/assets/fe8b6d2b-6f3e-4eef-949c-c3055f3f834f" />
+<h2>Задание 3<h2>
+<img width="734" height="926" alt="03_discount_vat" src="https://github.com/user-attachments/assets/76b0ce63-e8c6-4ba5-b5ea-ff3a16039b61" />
+<h2>Задание 4<h2>
+<img width="683" height="785" alt="04_minutes_to_hhmm" src="https://github.com/user-attachments/assets/e85a1b3c-48dc-4a67-8ec3-4f6a789de4c1" />
+<h2>Задание 5<h2>
+<img width="847" height="825" alt="05_initials_and_len" src="https://github.com/user-attachments/assets/4f63cdff-61fa-4d58-bcd7-2d43eee88247" />
