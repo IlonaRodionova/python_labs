@@ -1,5 +1,10 @@
 <h1>Лабораторная 1<h1>
 <h2>Задание 1<h2>
+<pre><code>
+name = input('Имя: ')
+age = int(input('Возраст: '))
+print(f'Привет, {name}! Через год тебе будет {age + 1}')
+</code></pre>
 <img width="1034" height="1061" alt="01_greeting" src="https://github.com/user-attachments/assets/b3ff1fe7-c448-41a4-a4ce-a46f6490e585" />
 <h2>Задание 2<h2>
 <img width="973" height="677" alt="02_sum_avg" src="https://github.com/user-attachments/assets/fe8b6d2b-6f3e-4eef-949c-c3055f3f834f" />
