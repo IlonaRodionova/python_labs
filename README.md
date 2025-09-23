@@ -1,19 +1,19 @@
-<h1>Лабораторная 1<h1>
-<h2>Задание 1<h2>
-<pre><code>
-name = input('Имя: ')
+# Лабораторная 1
+## Задание 1
+
+‘name = input('Имя: ')
 age = int(input('Возраст: '))
-print(f'Привет, {name}! Через год тебе будет {age + 1}')
-</code></pre>
+print(f'Привет, {name}! Через год тебе будет {age + 1}')‘
+
 <img width="1034" height="1061" alt="01_greeting" src="https://github.com/user-attachments/assets/b3ff1fe7-c448-41a4-a4ce-a46f6490e585" />
-<h2>Задание 2<h2>
+## Задание 2
 <pre><code>
 a = float(input())
 b = float(input())
 print(f'sum={a+b}; avg={(a+b)/2}')
 </code></pre>
 <img width="973" height="677" alt="02_sum_avg" src="https://github.com/user-attachments/assets/fe8b6d2b-6f3e-4eef-949c-c3055f3f834f" />
-<h2>Задание 3<h2>
+## Задание 3
 <pre><code>
 price = float(input())
 discount = float(input())
@@ -27,13 +27,13 @@ print(f"НДС: {vat_amount:.2f}")
 print(f"Итого к оплате {total:.2f}")
 </code></pre>
 <img width="734" height="926" alt="03_discount_vat" src="https://github.com/user-attachments/assets/76b0ce63-e8c6-4ba5-b5ea-ff3a16039b61" />
-<h2>Задание 4<h2>
+## Задание 4
 <pre><code>
 m = int(input())
 print(f'{m//60}:{m % 60}')
 </code></pre>
 <img width="683" height="785" alt="04_minutes_to_hhmm" src="https://github.com/user-attachments/assets/e85a1b3c-48dc-4a67-8ec3-4f6a789de4c1" />
-<h2>Задание 5<h2>
+## Задание 5
 <pre><code>
 fio = input('ФИО: ')
 ini = fio.split()
