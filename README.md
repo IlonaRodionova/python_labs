@@ -47,9 +47,11 @@ print(f'{m//60}:{m % 60}')
 ```
 fio = input('ФИО: ')
 ini = fio.split()
+fio =  fio.replace(' ', '')
 i = ini[0][:1] + ini[1][:1] + ini[2][:1]
 print(f'Инициалы: {i}')
-print(f'Длина (символов): {len(fio)}')
+print(f'Длина (символов): {len(fio)+2}')
 ```
-<img width="580" height="928" alt="05_initials_and_len" src="https://github.com/user-attachments/assets/ca19c725-4dfa-4630-8bf9-0d4743e16a2e" />
+<img width="598" height="625" alt="05_initials_and_len" src="https://github.com/user-attachments/assets/ef32ae78-9343-4d17-ac43-f384417bc495" />
+
 
