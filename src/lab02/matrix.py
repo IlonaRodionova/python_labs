@@ -1,5 +1,3 @@
-from idlelib.pyparse import trans
-
 def transpose(mat: list[list[float | int]]) -> list[list]:
     if not mat:
         return []
@@ -34,6 +32,21 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
     if not mat:
         return []
     return [sum(col) for col in zip(*mat)]
+print("transpose")
+print(transpose([[1, 2, 3]]))
+print(transpose([[1], [2], [3]]))
 print(transpose([[1, 2], [3, 4]]))
+print(transpose([]))
+print(transpose([[1, 2], [3]]))
+
+print("row_sums")
 print(row_sums([[1, 2, 3], [4, 5, 6]]))
+print(row_sums([[-1, 1], [10, -10]]))
+print(row_sums([[0, 0], [0, 0]]))
+print(row_sums([[1, 2], [3]]))
+
+print("col_sums")
 print(col_sums([[1, 2, 3], [4, 5, 6]]))
+print(col_sums([[-1, 1], [10, -10]]))
+print(col_sums([[0, 0], [0, 0]]))
+print(col_sums([[1, 2], [3]]))
