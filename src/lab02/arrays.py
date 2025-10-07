@@ -44,7 +44,6 @@ def flatten(mat: list[list | tuple]) -> list:
     Raises:
         TypeError: Если встречен элемент, который не является списком или кортежем
 
-
     """
     result = []
     for row in mat:
@@ -53,8 +52,11 @@ def flatten(mat: list[list | tuple]) -> list:
         result.extend(row)
     return result
 
+print("min_max:")
+print(min_max([3, -1, 5, 5, 0]))
+print(min_max([42]))
+print(min_max([-5, -2, -9]))
+print(min_max([1.5, 2, 2.0, -3.1]))
 
-
-
-
-
+print("unique_sorted:")
+print(unique_sorted([3, 1, 2, 1, 3]))
