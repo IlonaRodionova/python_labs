@@ -76,7 +76,7 @@ def col_sums(mat):
         return []
     return [sum(col) for col in zip(*mat)]
 ```
-
+![matrix.png](..%2Fimages%2Flab02%2Fmatrix.png)
 
 ## Задание 3
 
