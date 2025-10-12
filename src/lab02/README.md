@@ -1,46 +1,39 @@
 # Лабораторная 2
 ## Задание 1
+### min_max
+```
+def min_max(nums: list[float | int] ) -> tuple[float | int, float | int]:
+    if not nums:
+        raise ValueError
+    return (min(nums), max(nums))
+print(min_max([3,-1,5,5,0]))
+print(min_max([42]))
+print(min_max([-5,-2,-9]))
+print(min_max([1.5,2,2.0,-3.1]))
+print(min_max([]))
+```
+
+### unique_sorted
 
 ```
-def min_max(nums: list[float | int]) -> tuple[float | int, float | int]:
-    if not nums:
-        raise ValueError("Список пуст")
-    return (min(nums), max(nums))
-
-
 def unique_sorted(nums: list[float | int]) -> list[float | int]:
     return sorted(set(nums))
-
-
-def flatten(mat: list[list | tuple]) -> list:
-    result = []
-    for row in mat:
-        if not isinstance(row, (list, tuple)):
-            raise TypeError("Элемент не является списком или кортежем")
-        result.extend(row)
-    return result
-
-print("min_max:")
-print(min_max([3, -1, 5, 5, 0]))
-print(min_max([42]))
-print(min_max([-5, -2, -9]))
-print(min_max([1.5, 2, 2.0, -3.1]))
-
-print("unique_sorted:")
 print(unique_sorted([3, 1, 2, 1, 3]))
 print(unique_sorted([]))
 print(unique_sorted([-1, -1, 0, 2, 2]))
 print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))
-
-print("flatten")
-print(flatten([[1, 2], [3, 4]]))
-print(flatten(([1, 2], (3, 4, 5))))
-print(flatten([[1], [], [2, 3]]))
-print(flatten([[1, 2], "ab"]))
-
 ```
 
-![arrays.png](..%2Fimages%2Flab02%2Farrays.png)
+### flatten
+
+```
+def unique_sorted(nums: list[float | int]) -> list[float | int]:
+    return sorted(set(nums))
+print(unique_sorted([3, 1, 2, 1, 3]))
+print(unique_sorted([]))
+print(unique_sorted([-1, -1, 0, 2, 2]))
+print(unique_sorted([1.0, 1, 2.5, 2.5, 0]))
+```
 
 ## Задание 2
 
@@ -81,7 +74,36 @@ def col_sums(mat):
 ## Задание 3
 
 ```
+def format_record(tuuple):
+    if type(tuuple) != tuple:
+        return 'TypeError'
+    if len(tuuple) != 3:
+        return 'ValueError'
 
+    if tuuple[0] == '' or tuuple[1] == '':
+        return 'ValueError'
+
+    if type(tuuple[0]) != str or type(tuuple[1]) != str or type(tuuple[2]) != float:
+        return 'TypeError'
+
+    # Реализуем обработку фамилии
+    fio = tuuple[0].split()
+    m = len(fio) - 1
+    fio_str = f'{fio[0][0].upper()}{fio[0][1:]} '
+    for i in range(1, m + 1):
+        fio_str += f'{fio[i][0].upper()}.'
+    fio_str += ','
+
+    # Реализуем обработку группы
+    group_str = f' гр. {tuuple[1]},'
+
+    # Реализуем обработку GPA(че это (средний балл успеваемости))
+    GPA_str = f' GPA {tuuple[2]:.2f}'
+
+    return fio_str + group_str + GPA_str
+
+
+print(format_record(("Иванов Иван Иванович", "BIVT-25", 4.6)))
 
 ```
-
+![tuples.png](..%2F..%2F..%2Ftuples.png)
