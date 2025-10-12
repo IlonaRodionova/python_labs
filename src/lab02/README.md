@@ -37,7 +37,7 @@ print(flatten(([1, 2], (3, 4, 5))))
 print(flatten([[1], [], [2, 3]]))
 print(flatten([[1, 2], "ab"]))
 ```
-
+ ![img.png](img.png)
 ## Задание 2
 
 ```
