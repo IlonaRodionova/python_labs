@@ -37,7 +37,7 @@ print(flatten(([1, 2], (3, 4, 5))))
 print(flatten([[1], [], [2, 3]]))
 print(flatten([[1, 2], "ab"]))
 ```
- ![img.png](img.png)
+![arrays.png](..%2F..%2Fimages%2Flab02%2Farrays.png)
 ## Задание 2
 
 ```
@@ -94,7 +94,7 @@ print(col_sums([[-1, 1], [10, -10]]))
 print(col_sums([[0, 0], [0, 0]]))
 print(col_sums([[1, 2], [3]]))
 ```
-![matrix.png](..%2Fimages%2Flab02%2Fmatrix.png)
+![matrix.png](..%2F..%2Fimages%2Flab02%2Fmatrix.png)
 
 ## Задание 3
 
@@ -122,13 +122,15 @@ def format_record(tuuple):
     # Реализуем обработку группы
     group_str = f' гр. {tuuple[1]},'
 
-    # Реализуем обработку GPA(че это (средний балл успеваемости))
+    # Реализуем обработку GPA
     GPA_str = f' GPA {tuuple[2]:.2f}'
 
     return fio_str + group_str + GPA_str
 
-
 print(format_record(("Иванов Иван Иванович", "BIVT-25", 4.6)))
+print(format_record(("Петров Пётр", "IKBO-12", 5.0)))
+print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
+print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999)))
 
 ```
 ![tuples.png](..%2F..%2F..%2Ftuples.png)
