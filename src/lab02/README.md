@@ -133,4 +133,4 @@ print(format_record(("Петров Пётр Петрович", "IKBO-12", 5.0)))
 print(format_record(("  сидорова  анна   сергеевна ", "ABB-01", 3.999)))
 
 ```
-![img.png](img.png)
+![tuples.png](..%2F..%2Fimages%2Flab02%2Ftuples.png)
