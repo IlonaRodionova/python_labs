@@ -1,6 +1,8 @@
 # Лабораторная 3
 ## Задание 1
 ```
+import re
+
 def normalize(text: str, *, casefold: bool = True, yo2e: bool = True) -> str:
     text = text.casefold()
     if yo2e:
@@ -16,7 +18,6 @@ print(normalize("Hello\r\nWorld"))
 print(normalize("  двойные   пробелы  "))
 
 
-import re
 def tokenize(text: str) -> list[str]:
     return re.findall(r'\w+(?:-\w+)*', text)
 
