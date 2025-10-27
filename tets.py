@@ -15,7 +15,7 @@ print("Тестовый файл data/input.txt создан")
 
 from src.lab04.io_txt_csv import read_text, write_csv, ensure_parent_dir
 
-print("=== Тест 1: Чтение файла ===")
+print(" Тест 1: Чтение файла")
 try:
     text = read_text("data/input.txt", encoding="utf-8")
     print(f"Успешно прочитано: {len(text)} символов")
@@ -31,7 +31,7 @@ except UnicodeDecodeError as e:
     except Exception as e2:
         print(f"cp1251 тоже не работает: {e2}")
 
-print("\n=== Тест 2: Создание CSV ===")
+print("\n Тест 2: Создание CSV")
 test_data = [
     ("word", "count"),
     ("привет", 2),
@@ -42,11 +42,11 @@ test_data = [
 write_csv(test_data, "data/output.csv", header=("word", "count"))
 print("CSV файл создан: data/output.csv")
 
-print("\n=== Тест 3: Создание папок ===")
+print("\n Тест 3: Создание папок")
 ensure_parent_dir("results/new_folder/test.csv")
 print("Папки созданы")
 
-print("\n=== Тест 4: Пустой CSV ===")
+print("\n Тест 4: Пустой CSV")
 write_csv([], "data/empty.csv")
 print("Пустой файл создан")
 
