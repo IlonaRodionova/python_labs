@@ -34,6 +34,7 @@ def write_csv(rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...
 def ensure_parent_dir(path: str | Path) -> None:
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
+
 ```
 ![1.png](..%2F..%2Fimages%2Flab04%2F1.png)
 ![111.png](..%2F..%2Fimages%2Flab04%2F111.png)
