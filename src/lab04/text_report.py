@@ -10,6 +10,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
-# python -m src.lab04.text_report

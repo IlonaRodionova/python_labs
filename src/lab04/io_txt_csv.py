@@ -31,6 +31,3 @@ def write_csv(rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...
 def ensure_parent_dir(path: str | Path) -> None:
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
-
-# print(read_text("data/input.txt"))
-# write_csv([("Илона", 2), ("Ваня", 5)], "data/check.csv")
