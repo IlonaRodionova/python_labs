@@ -3,7 +3,7 @@ import csv
 from typing import Iterable, Sequence
 
 
-def read_text(path: str | Path, encoding: str = "cp1251") -> str:
+def read_text(path: str | Path, encoding: str = "utf-8") -> str:
    p = Path(path)
    return p.read_text(encoding=encoding)
 
@@ -31,3 +31,6 @@ def write_csv(rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...
 def ensure_parent_dir(path: str | Path) -> None:
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
+
+# print(read_text("data/input.txt"))
+# write_csv([("Илона", 2), ("Ваня", 5)], "data/check.csv")

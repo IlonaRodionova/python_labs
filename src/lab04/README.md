@@ -36,7 +36,8 @@ def ensure_parent_dir(path: str | Path) -> None:
     p.parent.mkdir(parents=True, exist_ok=True)
 
 ```
-
+![1.png](..%2F..%2Fimages%2Flab04%2F1.png)
+![111.png](..%2F..%2Fimages%2Flab04%2F111.png)
 ## Задание 2
 
 ```
@@ -129,4 +130,4 @@ def main():
 if __name__ == "__main__":
     main()
 ```
-
+![2.png](..%2F..%2Fimages%2Flab04%2F2.png)
