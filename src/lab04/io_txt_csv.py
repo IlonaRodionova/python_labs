@@ -3,12 +3,23 @@ import csv
 from typing import Iterable, Sequence
 
 
+def _validate_file_extension(path: str | Path, allowed_extensions: set[str] = {'.txt', '.csv'}) -> None:
+    file_path = Path(path)
+    extension = file_path.suffix.lower()
+
+    if extension not in allowed_extensions:
+        raise ValueError(
+            f"Этот файл не подходит! У него расширение {extension}, а нужно {', '.join(allowed_extensions)}")
+
+
 def read_text(path: str | Path, encoding: str = "utf-8") -> str:
-   p = Path(path)
-   return p.read_text(encoding=encoding)
+    _validate_file_extension(path, {'.txt'})
+    p = Path(path)
+    return p.read_text(encoding=encoding)
 
 
 def write_csv(rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...] | None = None) -> None:
+    _validate_file_extension(path, {'.csv'})
     p = Path(path)
     rows = list(rows)
 
