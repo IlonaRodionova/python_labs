@@ -1,9 +1,9 @@
 import sys
 import os
-sys.path.append(r'C:\Users\Илона\Desktop\python_labs\src\lib')
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../lib'))) # относительный путь к файлу (позволяет удобно использовать данный код на различных устройствах)
-from lib.text import normalize, tokenize, count_freq, top_n
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../lib')))
+
+from text import normalize, tokenize, count_freq, top_n
 
 def main():
     a = sys.stdin.read()
@@ -19,4 +19,4 @@ def main():
 if __name__ == "__main__":
     main()
 
-# echo "Hello world!!! Hello!" | lib\text.py
+# echo "Hello world!!! Hello!" | py src/lab03/text_stats.py

@@ -56,8 +56,11 @@ print(top_n(freq_2, n=2))
 ## Задание 2
 
 ```
-# sys.path.append(r'C:\Users\Илона\Desktop\python_labs\src\lib')
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../lib'))) # относительный путь к файлу (позволяет удобно использовать данный код на различных устройствах)
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../lib')))
+
 from text import normalize, tokenize, count_freq, top_n
 
 def main():
@@ -74,7 +77,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-# echo "Hello world!!! Hello!" | python src/lab03/text_stats.py
+# echo "Hello world!!! Hello!" | py src/lab03/text_stats.py
 ```
 ![text_stats.png](..%2F..%2Fimages%2Flab03%2Ftext_stats.png)
 
