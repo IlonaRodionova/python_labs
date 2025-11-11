@@ -1,34 +1,44 @@
 # Лабораторная 4
 ## Задание 1
 ```
-from pathlib import Path
 import csv
-from typing import Iterable, Sequence
-
+from pathlib import Path
 
 def read_text(path: str | Path, encoding: str = "utf-8") -> str:
-   p = Path(path)
-   return p.read_text(encoding=encoding)
-
-
-def write_csv(rows: Iterable[Sequence], path: str | Path, header: tuple[str, ...] | None = None) -> None:
     p = Path(path)
+
+    # Проверяем что файл имеет расширение .txt
+    if p.suffix.lower() not in ['.txt', '.csv']:
+        raise ValueError("Функция read_text работает только с .txt и .csv файлами")
+    return p.read_text(encoding=encoding)
+
+
+def write_csv(rows: list[tuple | list], path: str | Path,
+              header: tuple[str, ...] = None) -> None:
+    p = Path(path)
+
+    # Проверяем что файл имеет расширение .csv или .txt
+    if p.suffix.lower() not in ['.csv', '.txt']:
+        raise ValueError("Функция write_csv работает только с .csv и .txt файлами")
+
     rows = list(rows)
 
-    # Проверяем, что все строки одинаковой длины
+    # Проверка одинаковой длины строк
     if rows:
         first_len = len(rows[0])
         for i, row in enumerate(rows):
             if len(row) != first_len:
                 raise ValueError(f"Строка {i} имеет длину {len(row)}, ожидалась {first_len}")
 
-    # Записываем в файл
+    # Создание родительских директорий
+    ensure_parent_dir(p)
+
     with p.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.writer(f)
+        w = csv.writer(f)
         if header is not None:
-            writer.writerow(header)
-        for row in rows:
-            writer.writerow(row)
+            w.writerow(header)
+        for r in rows:
+            w.writerow(r)
 
 
 def ensure_parent_dir(path: str | Path) -> None:
