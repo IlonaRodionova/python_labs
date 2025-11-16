@@ -1,6 +1,6 @@
 # Лабораторная 5
 ## Задание 1
-```
+``` python
 import json
 import csv
 from pathlib import Path
@@ -64,7 +64,7 @@ def csv_to_json(csv_path, json_path):
 
 ## Задание 2
 
-```
+``` python
 import csv
 from pathlib import Path
 from openpyxl import Workbook
