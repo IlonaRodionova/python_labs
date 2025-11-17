@@ -2,9 +2,7 @@ import json
 import csv
 from pathlib import Path
 
-
 def json_to_csv(json_path, csv_path):
-    """JSON → CSV"""
     # Проверяем файл
     if not Path(json_path).exists():
         raise FileNotFoundError(f"Файл {json_path} не найден")
@@ -37,7 +35,6 @@ def json_to_csv(json_path, csv_path):
 
 
 def csv_to_json(csv_path, json_path):
-    """CSV → JSON"""
     # Проверяем файл
     if not Path(csv_path).exists():
         raise FileNotFoundError(f"Файл {csv_path} не найден")
@@ -56,3 +53,9 @@ def csv_to_json(csv_path, json_path):
     # Записываем JSON
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
+
+
+
+
+
+

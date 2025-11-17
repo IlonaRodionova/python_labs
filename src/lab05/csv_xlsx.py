@@ -2,17 +2,13 @@ import csv
 from pathlib import Path
 from openpyxl import Workbook
 
-
-
 def csv_to_xlsx(csv_path, xlsx_path):
-    """CSV → Excel"""
     # Проверяем файл
     if not Path(csv_path).exists():
         raise FileNotFoundError(f"Файл {csv_path} не найден")
 
     if Path(csv_path).suffix != '.csv': raise ValueError(f'Неверное расширение csv файла {Path(csv_path).suffix}')
     if Path(xlsx_path).suffix != '.xlsx': raise ValueError(f'Неверное расширение xlsx файла {Path(xlsx_path).suffix}')
-
 
     # Читаем CSV
     with open(csv_path, 'r', encoding='utf-8', newline='') as f:

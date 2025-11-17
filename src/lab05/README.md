@@ -5,9 +5,7 @@ import json
 import csv
 from pathlib import Path
 
-
 def json_to_csv(json_path, csv_path):
-    """JSON → CSV"""
     # Проверяем файл
     if not Path(json_path).exists():
         raise FileNotFoundError(f"Файл {json_path} не найден")
@@ -40,7 +38,6 @@ def json_to_csv(json_path, csv_path):
 
 
 def csv_to_json(csv_path, json_path):
-    """CSV → JSON"""
     # Проверяем файл
     if not Path(csv_path).exists():
         raise FileNotFoundError(f"Файл {csv_path} не найден")
@@ -59,8 +56,9 @@ def csv_to_json(csv_path, json_path):
     # Записываем JSON
     with open(json_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
-
 ```
+![people_from_csv.png](..%2F..%2Fimages%2Flab05%2Fpeople_from_csv.png)
+![people_from_json.png](..%2F..%2Fimages%2Flab05%2Fpeople_from_json.png)
 
 ## Задание 2
 
@@ -69,12 +67,13 @@ import csv
 from pathlib import Path
 from openpyxl import Workbook
 
-
 def csv_to_xlsx(csv_path, xlsx_path):
-    """CSV → Excel"""
     # Проверяем файл
     if not Path(csv_path).exists():
         raise FileNotFoundError(f"Файл {csv_path} не найден")
+
+    if Path(csv_path).suffix != '.csv': raise ValueError(f'Неверное расширение csv файла {Path(csv_path).suffix}')
+    if Path(xlsx_path).suffix != '.xlsx': raise ValueError(f'Неверное расширение xlsx файла {Path(xlsx_path).suffix}')
 
     # Читаем CSV
     with open(csv_path, 'r', encoding='utf-8', newline='') as f:
@@ -108,6 +107,5 @@ def csv_to_xlsx(csv_path, xlsx_path):
 
     # Сохраняем файл
     wb.save(xlsx_path)
-
 ```
-
+![people_xlsx.png](..%2F..%2Fimages%2Flab05%2Fpeople_xlsx.png)
