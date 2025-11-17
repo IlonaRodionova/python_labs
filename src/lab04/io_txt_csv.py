@@ -11,12 +11,8 @@ def read_text(path: str | Path, encoding: str = "utf-8") -> str:
 
 
 def write_csv(rows: list[tuple | list], path: str | Path,
-              header: tuple[str, ...] = None) -> None:
+              header: tuple[str, ...] = ("word", "count")) -> None:
     p = Path(path)
-
-    # Проверяем что файл имеет расширение .csv или .txt
-    if p.suffix.lower() not in ['.csv', '.txt']:
-        raise ValueError("Функция write_csv работает только с .csv и .txt файлами")
 
     rows = list(rows)
 
