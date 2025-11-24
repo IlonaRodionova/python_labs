@@ -10,7 +10,6 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
 from lab05.json_csv import json_to_csv, csv_to_json
 
 
-# Базовые тесты для успешных сценариев
 @pytest.mark.parametrize(
     "test_name, data, expected_count",
     [
@@ -35,7 +34,6 @@ from lab05.json_csv import json_to_csv, csv_to_json
     ],
 )
 def test_json_to_csv_success(tmp_path, test_name, data, expected_count):
-    """Параметризованный тест успешных преобразований JSON в CSV"""
     src = tmp_path / f"{test_name}.json"
     dst = tmp_path / f"{test_name}.csv"
 
@@ -59,7 +57,6 @@ def test_json_to_csv_success(tmp_path, test_name, data, expected_count):
     ],
 )
 def test_csv_to_json_success(tmp_path, test_name, csv_content, expected_count):
-    """Параметризованный тест успешных преобразований CSV в JSON"""
     src = tmp_path / f"{test_name}.csv"
     dst = tmp_path / f"{test_name}.json"
 
@@ -73,7 +70,6 @@ def test_csv_to_json_success(tmp_path, test_name, csv_content, expected_count):
     assert len(data) == expected_count
 
 
-# Тесты для ошибок JSON
 @pytest.mark.parametrize(
     "test_name, file_content, expected_error",
     [
@@ -85,7 +81,6 @@ def test_csv_to_json_success(tmp_path, test_name, csv_content, expected_count):
     ],
 )
 def test_json_to_csv_errors(tmp_path, test_name, file_content, expected_error):
-    """Параметризованный тест ошибок JSON в CSV"""
     src = tmp_path / f"{test_name}.json"
     dst = tmp_path / "output.csv"
 
@@ -98,7 +93,6 @@ def test_json_to_csv_errors(tmp_path, test_name, file_content, expected_error):
             json_to_csv(str(src), str(dst))
 
 
-# Тесты для ошибок CSV
 @pytest.mark.parametrize(
     "test_name, file_content, expected_error",
     [
@@ -107,7 +101,6 @@ def test_json_to_csv_errors(tmp_path, test_name, file_content, expected_error):
     ],
 )
 def test_csv_to_json_errors(tmp_path, test_name, file_content, expected_error):
-    """Параметризованный тест ошибок CSV в JSON"""
     src = tmp_path / f"{test_name}.csv"
     dst = tmp_path / "output.json"
 
@@ -120,9 +113,7 @@ def test_csv_to_json_errors(tmp_path, test_name, file_content, expected_error):
             csv_to_json(str(src), str(dst))
 
 
-# Специальные тесты
 def test_json_csv_roundtrip(tmp_path):
-    """Тест полного цикла преобразования"""
     original_json = tmp_path / "original.json"
     intermediate_csv = tmp_path / "intermediate.csv"
     final_json = tmp_path / "final.json"
@@ -138,11 +129,10 @@ def test_json_csv_roundtrip(tmp_path):
 
     assert len(final_data) == 2
     assert final_data[0]["name"] == "Alice"
-    assert final_data[0]["age"] == "25"  # В CSV→JSON все становится строками
+    assert final_data[0]["age"] == "25"
 
 
 def test_csv_empty_data_with_header(tmp_path):
-    """Тест для CSV только с заголовком"""
     src = tmp_path / "only_header.csv"
     dst = tmp_path / "test.json"
 
@@ -153,7 +143,6 @@ def test_csv_empty_data_with_header(tmp_path):
 
 
 def test_json_to_csv_creates_directories(tmp_path):
-    """Тест что создаются родительские директории"""
     src = tmp_path / "test.json"
     dst = tmp_path / "deep" / "nested" / "output.csv"
 
@@ -165,7 +154,6 @@ def test_json_to_csv_creates_directories(tmp_path):
 
 
 def test_csv_to_json_creates_directories(tmp_path):
-    """Тест что создаются родительские директории"""
     src = tmp_path / "test.csv"
     dst = tmp_path / "very" / "deep" / "output.json"
 

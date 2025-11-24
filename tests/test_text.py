@@ -7,7 +7,6 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "src"))
 from lib.text import normalize, tokenize, count_freq, top_n
 
 
-# Параметризованные тесты для normalize
 @pytest.mark.parametrize(
     "source, expected",
     [
@@ -18,14 +17,13 @@ from lib.text import normalize, tokenize, count_freq, top_n
         ("", ""),
         ("   ", ""),
         ("\n\t\r", ""),
-        ("ТЕКСТ!! С... punctuation?", "текст!! с... punctuation?"),
+        ("ТЕКСТ!! С... помогите?", "текст!! с... помогите?"),
     ],
 )
 def test_normalize(source, expected):
     assert normalize(source) == expected
 
 
-# Параметризованные тесты для tokenize
 @pytest.mark.parametrize(
     "text, expected",
     [
@@ -43,7 +41,6 @@ def test_tokenize(text, expected):
     assert tokenize(text) == expected
 
 
-# Параметризованные тесты для count_freq
 @pytest.mark.parametrize(
     "tokens, expected",
     [
@@ -61,7 +58,6 @@ def test_count_freq(tokens, expected):
     assert count_freq(tokens) == expected
 
 
-# Параметризованные тесты для top_n
 @pytest.mark.parametrize(
     "freq, n, expected",
     [
@@ -81,37 +77,30 @@ def test_top_n(freq, n, expected):
     assert top_n(freq, n) == expected
 
 
-# Дополнительные тесты как у одногруппника
 def test_normalize_special_cases():
-    """Тест специальных случаев нормализации"""
-    assert normalize("  Много   пробелов  ") == "много пробелов"
+    assert normalize("  Много       пробелов  ") == "много пробелов"
     assert normalize("Разные\nпереводы\tстрок") == "разные переводы строк"
 
 
 def test_tokenize_edge_cases():
-    """Тест граничных случаев токенизации"""
     assert tokenize("word") == ["word"]
     assert tokenize("a-b-c") == ["a-b-c"]
     assert tokenize("test1 test2 test3") == ["test1", "test2", "test3"]
 
 
 def test_count_freq_edge_cases():
-    """Тест граничных случаев подсчета частот"""
-    assert count_freq(["a", "A", "a"]) == {"a": 2, "A": 1}  # Регистр важен
+    assert count_freq(["a", "A", "a"]) == {"a": 2, "A": 1}
     assert count_freq(["word-with-dash"]) == {"word-with-dash": 1}
 
 
 def test_top_n_edge_cases():
-    """Тест граничных случаев top_n"""
     # Тест когда n больше количества элементов
     assert top_n({"a": 1}, 10) == [("a", 1)]
     # Тест с одним элементом
     assert top_n({"single": 5}, 1) == [("single", 5)]
 
 
-# Интеграционные тесты
 def test_full_pipeline():
-    """Полный пайплайн обработки текста"""
     text = "Привет мир! Привет всем. Мир прекрасен."
     normalized = normalize(text)
     tokens = tokenize(normalized)
@@ -125,7 +114,6 @@ def test_full_pipeline():
 
 
 def test_full_pipeline_complex():
-    """Пайплайн со сложным текстом"""
     text = "По-настоящему КРУТО!!! 2025 год... версия 2.0"
 
     normalized = normalize(text)
