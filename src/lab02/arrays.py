@@ -16,6 +16,7 @@ def flatten(mat: list[list | tuple]) -> list:
         result.extend(row)
     return result
 
+
 print("min_max:")
 print(min_max([3, -1, 5, 5, 0]))
 print(min_max([42]))

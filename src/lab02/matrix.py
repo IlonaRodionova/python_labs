@@ -13,6 +13,7 @@ def row_sums(mat: list[list[float | int]]) -> list[float]:
             if len(row) != length:
                 return False
         return True
+
     if not check_rectangular(mat):
         raise ValueError("Рваная матрица")
     return [sum(row) for row in mat]
@@ -27,11 +28,14 @@ def col_sums(mat: list[list[float | int]]) -> list[float]:
             if len(row) != length:
                 return False
         return True
+
     if not check_rectangular(mat):
         raise ValueError("Рваная матрица")
     if not mat:
         return []
     return [sum(col) for col in zip(*mat)]
+
+
 print("transpose")
 print(transpose([[1, 2, 3]]))
 print(transpose([[1], [2], [3]]))

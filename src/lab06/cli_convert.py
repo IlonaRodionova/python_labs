@@ -29,5 +29,6 @@ def main():
     elif args.cmd == "csv2xlsx":
         csv_to_xlsx(args.input, args.output)
 
+
 if __name__ == "__main__":
     main()
