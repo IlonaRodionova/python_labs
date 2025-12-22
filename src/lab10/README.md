@@ -197,4 +197,4 @@ class SinglyLinkedList:
         values = list(self)
         return f"SinglyLinkedList({values})"
 ```
-![lab10.png](..%2F..%2F..%2Flab10.png)
+![lab10.png](..%2F..%2Fimages%2Flab10%2Flab10.png)
